@@ -1,2 +1,47 @@
-<h1>{{title}} Yay</h1>
-<p>Welcome to {{title}}</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="header-content">
+			<h1>Cheap Holidays</h1>
+		</div>
+	</div>
+	<div class="container">
+
+		{{> filters}}
+
+		<div class="tabs">
+			<div class="tab tab--active" data-tab="flights">Flights</div>
+			<div class="tab" data-tab="hotels">Hotels</div>
+		</div>
+
+		<div class="content">
+			<div id="flights" class="tab--active">
+				{{#each flights}}
+				{{> flight}}
+				{{/each}}
+			</div>
+			<div id="hotels">
+				{{#each hotels}}
+				{{> hotel}}
+				{{/each}}
+			</div>
+		</div>
+
+		<div class="footer">
+			&copy; Ricks Trips, 2022
+		</div>
+	</div>
+
+	{{> dialog}}
+
+	<script src="scripts/app.js"></script>
+</body>
+
+</html>

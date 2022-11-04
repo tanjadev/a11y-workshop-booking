@@ -1,0 +1,11 @@
+.header {
+	background-color: #0A72B6;
+	color: white;
+	padding: 0.5em;
+	margin-bottom: 1em;
+}
+
+.header-content {
+	max-width: 900px;
+	margin: 0 auto;
+}

@@ -1,0 +1,27 @@
+<div class="hotel booking-row">
+	{{!-- Button to collapse/expand hotel description --}}
+	<button class="toggle-details">
+		<i class="fa fa-caret-right"></i>
+	</button>
+
+	{{!-- star rating of this hotel --}}
+	<span class="rating">
+		{{#times stars}}
+		<i class="fa fa-star"></i>
+		{{/times}}
+	</span>
+
+	<span class="hotel-title">{{title}}</span>
+
+	<a class="booking-button"><i class="fa fa-bed"></i> Book</a>
+	<span>for {{price}} per night</span>
+
+	{{!-- A thumb up indicating what percentage of users recommended that hotel. --}}
+	<span class="recommendation rec-{{recommendation}}">
+		<i class="fa fa-thumbs-up"></i>
+	</span>
+
+	<div class="hotel-details">
+		{{description}}
+	</div>
+</div>

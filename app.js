@@ -1,17 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const livereload = require("livereload");
 const livereloadcon = require('connect-livereload');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
+const handlebars = require('express-handlebars');
+const indexRouter = require('./routes/index');
 const liveReloadServer = livereload.createServer();
-
-// liveReloadServer.watch(path.join(__dirname, 'public'))
 
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
@@ -20,11 +16,27 @@ liveReloadServer.server.once("connection", () => {
   }, 100);
 });
 
-var app = express();
+const app = express();
 app.use(livereloadcon());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+
+const handlebarOptions = {
+  extname: 'hbs',
+  partialsDir: 'views/partials',
+  helpers: {
+    times: (n, block) => {
+      let accum = '';
+      for (let i = 0; i < n; ++i)
+        accum += block.fn(i);
+      return accum;
+    }
+  }
+};
+const engine = handlebars.create(handlebarOptions)
+app.engine('hbs', engine.engine);
+
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
@@ -32,9 +44,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/node_modules', express.static('node_modules/'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -49,7 +61,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', { layout: false });
 });
 
 module.exports = app;

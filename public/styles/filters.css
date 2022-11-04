@@ -1,0 +1,7 @@
+.filters {
+	margin-bottom: 1em;
+}
+
+.filters input[type="search"] {
+	width: 100%;
+}

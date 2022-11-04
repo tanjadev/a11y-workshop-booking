@@ -1,0 +1,39 @@
+#confirm-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.4);
+	justify-content: center;
+	align-items: center;
+}
+
+#confirm-modal.open {
+	display: flex;
+}
+
+.confirm-dialog {
+	background-color: white;
+	box-shadow: 1px 1px 3px #FFF;
+	padding: 1em;
+	border-radius: 0.5em;
+}
+.confirm-buttons {
+	text-align: right;
+	margin-top: 0.5em;
+}
+.confirm-buttons button {
+	min-width: 50px;
+	background: lightgray;
+	border: none;
+	border-radius: 0.2em;
+	transition: all 0.2s ease;
+	padding: 0.4em;
+}
+.confirm-buttons button:hover,
+.confirm-buttons button:focus {
+	background-color: #0A72B6;
+	color: white;
+}

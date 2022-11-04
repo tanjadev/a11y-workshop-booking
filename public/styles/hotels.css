@@ -1,0 +1,73 @@
+.hotel:not(.expanded) .hotel-details {
+	display: none;
+}
+
+.hotel {
+	flex-wrap: wrap;
+}
+
+.hotel-title {
+  flex: 1;
+}
+
+.hotel-details {
+	margin-top: 0.4em;
+	padding-left: 0.5em;
+	border-left: 3px solid gray;
+}
+
+.toggle-details {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.hotel .fa-caret-right {
+	transition: transform 0.2s ease;
+}
+.hotel.expanded .fa-caret-right {
+	transform: rotate(90deg);
+}
+
+.rating {
+	width: 6em;
+}
+
+.recommendation[class*="rec-9"] {
+	color: #43a047;
+}
+
+.recommendation[class*="rec-8"] {
+	color: #388e3c;
+}
+
+.recommendation[class*="rec-7"] {
+	color: #afb42b;
+}
+
+.recommendation[class*="rec-6"] {
+	color: #cddc39;
+}
+
+.recommendation[class*="rec-5"] {
+	color: #ffeb3b;
+}
+
+.recommendation[class*="rec-4"] {
+	color: #ffb300;
+}
+
+.recommendation[class*="rec-3"] {
+	color: #ff8f00;
+}
+
+.recommendation[class*="rec-2"] {
+	color: #ef6c00;
+}
+
+.recommendation[class*="rec-1"] {
+	color: #d32f2f;
+}
+
+.recommendation[class*="rec-0"] {
+	color: #b71c1c;
+}
