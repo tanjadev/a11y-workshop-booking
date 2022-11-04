@@ -2,9 +2,9 @@ const hotelDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing eli
 
 module.exports = {
 	flights: [
-		{ id: 'LH1366', carrier: 'Lufthansa', from: 'FRA', to: 'KRK', dep: '2017-12-10 15:00' },
-		{ id: 'LH1234', carrier: 'Lufthansa', from: 'FRA', to: 'SFO', dep: '2017-12-11 15:00' },
-		{ id: 'FR110', carrier: 'Ryanair', from: 'WMI', to: 'DUB', dep: '2017-12-11 15:15' }
+		{ id: 'LH1366', carrier: 'Lufthansa', from: 'FRA', to: 'KRK', dep: '2017-12-10 15:00', price: '140€' },
+		{ id: 'LH1234', carrier: 'Lufthansa', from: 'FRA', to: 'SFO', dep: '2017-12-11 15:00', price: '69€' },
+		{ id: 'FR110', carrier: 'Ryanair', from: 'WMI', to: 'DUB', dep: '2017-12-11 15:15', price: '190€' }
 	],
 	hotels: [
 		{ id: 'q-plus', title: 'Q Hotel Plus', price: '110€', stars: 3, description: hotelDescription, recommendation: 71 },
